@@ -200,7 +200,7 @@ public class CloudTagView extends RelativeLayout {
 				}
 			});
 
-			// calculate　of tag layout width
+			// calculate of tag layout width
 			float tagWidth = tagView.getPaint().measureText(tag.text) + textPaddingLeft + textPaddingRight;
 			// tagView padding (left & right)
 
