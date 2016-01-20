@@ -60,6 +60,11 @@ public class TagCloudView extends RelativeLayout {
 	int textPaddingTop;
 	int texPaddingBottom;
 
+	/**
+	 * param
+	 */
+	protected int maxLine = -1;
+
 
 	/**
 	 * constructor
@@ -173,8 +178,10 @@ public class TagCloudView extends RelativeLayout {
 		int index_bottom = 1;// The CloudTag to add below
 		int index_header = 1;// The header tag of this line
 		CloudTag tag_pre = null;
+        int currLine = 0;
 		for (CloudTag item : mTags) {
 			final int position = listIndex - 1;
+
 			final CloudTag tag = item;
 
 			// inflate tag layout
@@ -237,7 +244,14 @@ public class TagCloudView extends RelativeLayout {
 			//add margin of each line
 			tagParams.bottomMargin = lineMargin;
 
+
 			if (mWidth <= total + tagWidth + Utils.dpToPx(this.getContext(), Constants.LAYOUT_WIDTH_OFFSET)) {
+                currLine += 1;
+                if (currLine >= maxLine) {
+                    tagView.setVisibility(GONE);
+                    mTags.subList(position, mTags.size()).clear();
+                    break;
+                }
 				//need to add in new line
 				tagParams.addRule(RelativeLayout.BELOW, index_bottom);
 				// initialize total param (layout padding left & layout padding right)
@@ -256,16 +270,12 @@ public class TagCloudView extends RelativeLayout {
 						index_bottom = listIndex;
 					}
 				}
-
-
 			}
 			total += tagWidth;
 			addView(tagLayout, tagParams);
 			tag_pre = tag;
 			listIndex++;
-
 		}
-
 	}
 
 	private Drawable getSelector(CloudTag tag) {
@@ -313,6 +323,10 @@ public class TagCloudView extends RelativeLayout {
 	public List<CloudTag> getTags() {
 		return mTags;
 	}
+
+    public void setMaxLine(int max) {
+        maxLine = max;
+    }
 
 	/**
 	 * remove tag
