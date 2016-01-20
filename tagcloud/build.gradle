@@ -12,7 +12,7 @@ apply plugin: 'com.github.dcendents.android-maven'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven'
 
-version = '1.0.1'
+version = '1.0.2'
 group = 'com.guozengxin.android'
 def siteUrl = 'https://github.com/guozengxin/AndroidLibrary'      // 项目的主页
 def gitUrl = 'https://github.com/guozengxin/AndroidLibrary.git'
@@ -26,9 +26,9 @@ android {
     buildToolsVersion "22.0.1"
 
     defaultConfig {
-        minSdkVersion 19
+        minSdkVersion 15
         targetSdkVersion 22
-        versionCode 101
+        versionCode 102
         versionName version
     }
     buildTypes {
