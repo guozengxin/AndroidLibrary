@@ -24,7 +24,7 @@ import java.util.List;
  * Android TagView Widget
  * github https://github.com/kaedea/Android-Cloud-TagView-Plus.git
  */
-public class CloudTagView extends RelativeLayout {
+public class TagCloudView extends RelativeLayout {
 
 	/**
 	 * tag list
@@ -66,7 +66,7 @@ public class CloudTagView extends RelativeLayout {
 	 *
 	 * @param ctx
 	 */
-	public CloudTagView(Context ctx) {
+	public TagCloudView(Context ctx) {
 		super(ctx, null);
 		initialize(ctx, null, 0);
 	}
@@ -77,7 +77,7 @@ public class CloudTagView extends RelativeLayout {
 	 * @param ctx
 	 * @param attrs
 	 */
-	public CloudTagView(Context ctx, AttributeSet attrs) {
+	public TagCloudView(Context ctx, AttributeSet attrs) {
 		super(ctx, attrs);
 		initialize(ctx, attrs, 0);
 	}
@@ -89,7 +89,7 @@ public class CloudTagView extends RelativeLayout {
 	 * @param attrs
 	 * @param defStyle
 	 */
-	public CloudTagView(Context ctx, AttributeSet attrs, int defStyle) {
+	public TagCloudView(Context ctx, AttributeSet attrs, int defStyle) {
 		super(ctx, attrs, defStyle);
 		initialize(ctx, attrs, defStyle);
 	}
@@ -219,7 +219,7 @@ public class CloudTagView extends RelativeLayout {
 				deletableView.setOnClickListener(new OnClickListener() {
 					@Override
 					public void onClick(View v) {
-						CloudTagView.this.remove(position);
+						TagCloudView.this.remove(position);
 						if (mDeleteListener != null) {
 							mDeleteListener.onTagDeleted(tag, position);
 						}
