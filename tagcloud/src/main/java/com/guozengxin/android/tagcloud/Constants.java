@@ -9,10 +9,10 @@ public class Constants {
 	
 	//----------------- separator TagView-----------------//
 	public static final float DEFAULT_LINE_MARGIN = 5;
-	public static final float DEFAULT_TAG_MARGIN = 5;
-	public static final float DEFAULT_TAG_TEXT_PADDING_LEFT = 8;
+	public static final float DEFAULT_TAG_MARGIN = 8;
+	public static final float DEFAULT_TAG_TEXT_PADDING_LEFT = 10;
 	public static final float DEFAULT_TAG_TEXT_PADDING_TOP = 5;
-	public static final float DEFAULT_TAG_TEXT_PADDING_RIGHT = 8;
+	public static final float DEFAULT_TAG_TEXT_PADDING_RIGHT = 10;
 	public static final float DEFAULT_TAG_TEXT_PADDING_BOTTOM = 5;
 	
 	public static final float LAYOUT_WIDTH_OFFSET = 2;

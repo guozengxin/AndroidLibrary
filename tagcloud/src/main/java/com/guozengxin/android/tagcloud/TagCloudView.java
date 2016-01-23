@@ -247,7 +247,7 @@ public class TagCloudView extends RelativeLayout {
 
 			if (mWidth <= total + tagWidth + Utils.dpToPx(this.getContext(), Constants.LAYOUT_WIDTH_OFFSET)) {
                 currLine += 1;
-                if (currLine >= maxLine) {
+                if (maxLine > 0 && currLine >= maxLine) {
                     tagView.setVisibility(GONE);
                     mTags.subList(position, mTags.size()).clear();
                     break;
